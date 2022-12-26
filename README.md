@@ -12,5 +12,6 @@ As a user, I want to be able to...
 - Access and interact with all of the Differential Diagnosis content. 
 - Interact with the content in different formats.
 - Access new content on a continuous basis.
+- Trust the system to make accurate suggestions for the highest learning potential.
 - Track my progress with current material and cumulative material.
 - Have confidence that my personal information is secure.
