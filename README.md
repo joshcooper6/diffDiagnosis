@@ -20,3 +20,4 @@ As an administrator, I want to be able to...
 - Add new stories with ease on a dashboard. 
 - Collect payments securely. 
 - Track how many users are using the application.
+- Easily collect crash reports for users.
