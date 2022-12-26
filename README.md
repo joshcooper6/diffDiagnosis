@@ -9,9 +9,8 @@ This is a full-stack web application in progress dedicated to providing stories,
 
 ## User Stories
 As a user, I want to be able to...
-- Access and interact with all of the Differential Diagnosis content. 
-- Interact with the content in different formats.
-- Access new content on a continuous basis.
-- Trust the system to make accurate suggestions for the highest learning potential.
-- Track my progress with current material and cumulative material.
+- Access all existing content and receive notifications when new content becomes available.
+- Interact with all of the Differntial Diagnosis content by topic via reading stories, fill-in-the-blank questions, multiple choice questions, or flash cards.
+- Render each story as 'complete' when the story has been read, every question has been answered, and every flash card has been reviewed.
+- Track my progress with current material and cumulative material based on how much material has been completed.
 - Have confidence that my personal information is secure.
