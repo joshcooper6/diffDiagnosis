@@ -14,3 +14,9 @@ As a user, I want to be able to...
 - Render each story as 'complete' when the story has been read, every question has been answered, and every flash card has been reviewed.
 - Track my progress with current material and cumulative material based on how much material has been completed.
 - Have confidence that my personal information is secure.
+<br />
+
+As an administrator, I want to be able to...
+- Add new stories with ease on a dashboard. 
+- Collect payments securely. 
+- Track how many users are using the application.
