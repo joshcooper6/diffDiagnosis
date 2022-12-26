@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Differential Diagnosis
 
-## Getting Started
+This is a full-stack web application in progress dedicated to providing stories, questions, and additional study materials for naturopathic medical students. Prospective users will create an account, submit payment information for monthly access, and have complete access to the material. Each story will render based off of diagnosis category. You will be able to hover over the fill-in-the-blank sentences included in the story, and be able to select from a multiple choice option menu. 
 
-First, run the development server:
+## Technology Stack Proposed
+<b>Front-End:</b> React.js, TailwindCSS <br/>
+<b>Back-End:</b> Next.js, Striped.js, Express.js, MongoDB, Amazon EC2
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## User Stories
+As a user, I want to be able to...
+- Access and interact with all of the Differential Diagnosis content. 
+- Interact with the content in different formats.
+- Access new content on a continuous basis.
+- Track my progress with current material and cumulative material.
+- Have confidence that my personal information is secure.
