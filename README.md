@@ -4,7 +4,8 @@ This is a full-stack web application in progress dedicated to providing stories,
 
 ## Technology Stack Proposed
 <b>Front-End:</b> React.js, TailwindCSS <br/>
-<b>Back-End:</b> Next.js, Striped.js, Express.js, MongoDB, Amazon EC2
+<b>Back-End:</b> Next.js, Striped.js, Express.js, MongoDB, Amazon EC2 <br />
+<b>Hosting:</b> Google Domains or Amazon Route 53
 
 ## User Stories
 As a user, I want to be able to...
