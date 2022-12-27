@@ -106,6 +106,10 @@ a {
   }
 }
 
+.transition_ease {
+  transition: 1s ease;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

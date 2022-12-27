@@ -1,28 +1,14 @@
 import { useEffect } from 'react';
 import { test } from '../testDB';
 import FormCarousel from '../comps/FormCarousel';
+import Link from 'next/link';
+import Header from '../comps/Header';
 
 export default function Home({x}) {
 
-  useEffect(() => {
-    console.log(Object.keys(x))
-    console.log(Object.values(x))
-  }, []);
-
   return (
-    <div className='min-w-screen min-h-screen flex flex-col justify-center items-center'>
-      {/* <p className='text-4xl font-thin'>Hello!</p> */}
-      <FormCarousel />
+    <div className='min-w-screen min-h-screen flex flex-col'>
+      <Header />
     </div>
   )
 }
-
-export async function getServerSideProps() {
-  const x = await test;
-
-  return {
-    props: {
-      x,
-    },
-  };
-};

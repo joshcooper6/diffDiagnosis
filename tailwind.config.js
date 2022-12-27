@@ -2,7 +2,12 @@
 module.exports = {
   content: [
     './pages/index.js',
-    './comps/FormCarousel.js'
+    './pages/about.js',
+    './pages/addStory.js',
+    './pages/sampleStory.js',
+    './comps/FormCarousel.js',
+    './comps/Header.js',
+    
   ],
   theme: {
     extend: {},

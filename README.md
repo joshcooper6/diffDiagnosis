@@ -5,7 +5,7 @@ This is a full-stack web application in progress dedicated to providing stories,
 ## Technology Stack Proposed
 <b>Front-End:</b> React.js, TailwindCSS <br/>
 <b>Back-End:</b> Next.js, Striped.js, Express.js, MongoDB, Amazon EC2 <br />
-<b>Hosting:</b> Google Domains or Amazon Route 53
+<b>Hosting:</b> Google Domains OR Amazon Route 53
 
 ## User Stories
 As a user, I want to be able to...
@@ -17,7 +17,7 @@ As a user, I want to be able to...
 <br />
 
 As an administrator, I want to be able to...
-- Add new stories with ease on a dashboard. 
-- Collect payments securely. 
-- Track how many users are using the application.
-- Easily collect crash reports for users.
+- Add, edit, and delete stories from the convenience of a minimal, straightforward dashboard.
+- Add, edit, and delete questions from each story from the dashboard.
+- Connect and collect payment authorization using a third-party provider, such as Striped.js.
+- Integrate user authorization and manage user database efficiently.
