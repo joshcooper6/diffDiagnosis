@@ -11,7 +11,7 @@ export default function addStory({x}) {
   }, []);
 
   return (
-    <div className='min-w-screen min-h-screen flex flex-col justify-center items-center'>
+    <div className='min-w-screen flex flex-col justify-center items-center'>
       {/* <p className='text-4xl font-thin'>Hello!</p> */}
       <Header />
       <FormCarousel />

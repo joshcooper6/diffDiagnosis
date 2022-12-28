@@ -7,7 +7,9 @@ module.exports = {
     './pages/sampleStory.js',
     './comps/FormCarousel.js',
     './comps/Header.js',
-    
+    './comps/Logo.js',
+    './comps/StoryBlock.js',
+
   ],
   theme: {
     extend: {},

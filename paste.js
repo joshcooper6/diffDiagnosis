@@ -1,0 +1,3 @@
+`Barry was an avid hiker, and there was no place he loved more than the beautiful trails of Connecticut. He spent every chance he got exploring the mountains and forests of the Constitution State, and he was always up for a new adventure.
+But one day, while out on a hike, Barry had an encounter that would change his life forever. He was walking through a dense patch of brush when he felt a sudden sting on his leg. When he looked down, he saw a small tick attached to his skin.
+Being an avid outdoorsman, he immediately recognized the tick as an Ixodes scapularis, or deer tick. He promptly removed the deer tick and thought nothing more of it.`

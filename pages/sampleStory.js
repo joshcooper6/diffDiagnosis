@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { test } from '../testDB';
+import { test, newTest } from '../testDB';
 import Header from '../comps/Header';
 import { getSentencesWithType } from '../funcs/getSentences';
 import { formatStory } from '../funcs/formatStory';
+import StoryBlock from '../comps/StoryBlock';
 
 export default function sampleStory({story}) {
 
@@ -34,16 +35,24 @@ export default function sampleStory({story}) {
 
     useEffect(() => {console.log(question)}, [question]);
 
+    const storyBlocks = newTest.elements.map(element => element.storyBlock);
+const allQuestions = newTest.elements.map(element => element.questions.map(q => q.question));
+const singleStory = newTest.elements;
+
+const [showQuestions, setShowQuestions] = useState(false);
 
   return (
     <div className='flex flex-col justify-center items-center'>
         <Header />
-        <div>
-        {filteredSentences.map(sentence => {
-            return <span className={`${sentence.type === 'question' ? 'font-bold' : ''}`} onClick={() =>{
+        <div className='p-4'>
+        {/* {filteredSentences.map(sentence => {
+            return (<span className={`${sentence.type === 'question' ? 'hover:font-bold cursor-pointer' : ''} transition_ease`} onClick={() =>{
                 if (sentence.type === 'question') {handleChange(sentence.sentence)};
-        }}>{sentence.sentence}. </span>
-        })}
+        }}>{sentence.sentence}. </span>)
+        })} */}
+        { singleStory.map(story => {
+          return <StoryBlock key={story.patient} story={story} />
+        }) }
         </div>
     </div>
   )
@@ -57,4 +66,4 @@ export async function getServerSideProps() {
         story,
       },
     };
-  };
+  }

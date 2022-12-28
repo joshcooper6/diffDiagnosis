@@ -104,24 +104,24 @@ const FormCarousel = () => {
               name={formElement.name}
               value={formValues[formElement.name] || ''}
               onChange={handleChange}
-              className={`rounded-md self-center p-2`}
+              className={`rounded-md border-black self-center p-2`}
               autoComplete={'off'}
             />
           </div>
         ))}
         <div className='flex items-center justify-center gap-2'>
         {currentIndex > 0 && (
-          <button type="button" className='p-2 border-[1px] mt-2 min-w-[100px] border-white rounded-md' onClick={handlePrev}>
+          <button type="button" className='p-2 border-[1px] mt-2 min-w-[100px] border-black rounded-md' onClick={handlePrev}>
             Previous
           </button>
         )}
         {  currentIndex < formElements.length - 1 && (
-    <button type="button" className='p-2 border-[1px] mt-2 min-w-[100px] border-white rounded-md' onClick={handleNext}>
+    <button type="button" className='p-2 border-[1px] mt-2 min-w-[100px] border-black rounded-md' onClick={handleNext}>
       Next
     </button>
   )}
   {currentIndex === formElements.length - 1 && (
-    <button type="submit" className='p-2 border-[1px] mt-2 min-w-[100px] border-white rounded-md'>Submit</button>
+    <button type="submit" className='p-2 border-[1px] mt-2 min-w-[100px] border-black rounded-md'>Submit</button>
   )}
   </div>
 </form>
