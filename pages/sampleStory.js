@@ -35,8 +35,6 @@ export default function sampleStory({story}) {
 
     useEffect(() => {console.log(question)}, [question]);
 
-    const storyBlocks = newTest.elements.map(element => element.storyBlock);
-const allQuestions = newTest.elements.map(element => element.questions.map(q => q.question));
 const singleStory = newTest.elements;
 
 const [showQuestions, setShowQuestions] = useState(false);

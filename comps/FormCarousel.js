@@ -97,14 +97,14 @@ const FormCarousel = () => {
     return (
       <form onKeyDown={handleKeyDown} className='flex flex-col' onSubmit={handleSubmit}>
         {formElements.map((formElement, index) => (
-          <div key={formElement.name} className={`${index === currentIndex ? 'flex' : 'hidden'}`}>
+          <div key={formElement.name} className={`${index === currentIndex ? 'flex gap-2' : 'hidden'}`}>
             <label className={`font-thin self-center uppercase tracking-widest`}>{formElement.label}</label>
             <input
               type={formElement.type}
               name={formElement.name}
               value={formValues[formElement.name] || ''}
               onChange={handleChange}
-              className={`rounded-md border-black self-center p-2`}
+              className={`rounded-md border-black border-[1px] self-center p-2`}
               autoComplete={'off'}
             />
           </div>
