@@ -9,7 +9,7 @@ module.exports = {
     './comps/Header.js',
     './comps/Logo.js',
     './comps/StoryBlock.js',
-
+    './comps/StoryQuestion.js',
   ],
   theme: {
     extend: {},
