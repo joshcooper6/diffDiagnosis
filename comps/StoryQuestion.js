@@ -13,7 +13,7 @@ export default function StoryQuestion(props) {
   const correctAnswer = input.toLowerCase() === answer.toLowerCase();
   // if question is answered, will lock in state
   const [complete, setComplete] = useState(false);
-  const answerIncluded = input.includes(answer);
+  const answerIncluded = input.toLowerCase().includes(answer.toLowerCase());
 
   function consoleTest() {
     console.log('question', {
@@ -47,9 +47,19 @@ export default function StoryQuestion(props) {
     }
   }
 
+  function checkForMatch(string, stringsToMatch) {
+    for (const s of stringsToMatch) {
+      if (string.includes(s)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   useEffect(() => {
     consoleTest();
     checkForCompletion();
+    console.log('checking keywords', checkForMatch(input, keywords));
   }, [input]);
 
   useEffect(() => {
@@ -78,7 +88,7 @@ export default function StoryQuestion(props) {
             onChange={e => setInput(e.target.value)}
             value={input}
             type={'textarea'}
-            className={`${activated && !multipleChoice ? 'w-[300px] border-[1px] p-2 border-red-600 rounded-lg h-[100px]' : 'hidden'}`}
+            className={`${activated && !multipleChoice ? 'w-full border-[1px] p-2 border-red-600 rounded-lg h-[100px]' : 'hidden'}`}
           />
           <button
             onClick={() => setMultipleChoice(prev => !prev)}
@@ -91,7 +101,7 @@ export default function StoryQuestion(props) {
                 choices.map(choice => (
                     <span
                         key={choice}
-                        className={`${choice === input && choice === answer ? 'text-green-700' : ''}`}
+                        className={`p-4 cursor-pointer hover:border-black border-[1px] mb-2 ${choice === input && choice === answer ? 'text-green-700' : ''}`}
                         onClick={() => handleChoice(choice)}
                         children={choice}
                     />

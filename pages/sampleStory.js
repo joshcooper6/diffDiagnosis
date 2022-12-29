@@ -35,19 +35,14 @@ export default function sampleStory({story}) {
 
     useEffect(() => {console.log(question)}, [question]);
 
-const singleStory = newTest.elements;
+  const singleStory = newTest.elements;
 
-const [showQuestions, setShowQuestions] = useState(false);
+  const [showQuestions, setShowQuestions] = useState(false);
 
   return (
     <div className='flex flex-col justify-center items-center'>
         <Header />
-        <div className='p-4'>
-        {/* {filteredSentences.map(sentence => {
-            return (<span className={`${sentence.type === 'question' ? 'hover:font-bold cursor-pointer' : ''} transition_ease`} onClick={() =>{
-                if (sentence.type === 'question') {handleChange(sentence.sentence)};
-        }}>{sentence.sentence}. </span>)
-        })} */}
+        <div className='w-11/12 max-w-[1000px] self-center p-4'>
         { singleStory.map(story => {
           return <StoryBlock key={story.patient} story={story} />
         }) }

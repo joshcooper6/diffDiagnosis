@@ -54,7 +54,12 @@ const newTest = {
                 {
                     id: 1,
                     question: 'Uh-oh, a tick bite. Where could this be going? Write down as many tick-borne infections that you can think of. Then, think about or research the geographical locations these infections are most prevalent. Is Barry in an endemic area? ',
-                    keywords: [],
+                    keywords: [
+                        'pink',
+                        'blue',
+                        'choiceThree',
+                        'green'
+                    ],
                     choices: [
                         'choiceOne',
                         'choiceTwo',
