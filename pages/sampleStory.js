@@ -36,6 +36,16 @@ export default function sampleStory({story}) {
     useEffect(() => {console.log(question)}, [question]);
 
   const singleStory = newTest.elements;
+  const [blocksRead, setBlocksRead] = useState([0]);
+  const [currentPlacement, setCurrentPlacement] = useState(0);
+
+  useEffect(() => {
+    console.log('current placement index', currentPlacement)
+  }, [currentPlacement])
+
+  useEffect(() => {
+    console.log('current blocks read', blocksRead)
+  }, [blocksRead])
 
   const [showQuestions, setShowQuestions] = useState(false);
 
@@ -43,8 +53,8 @@ export default function sampleStory({story}) {
     <div className='flex flex-col justify-center items-center'>
         <Header />
         <div className='w-11/12 max-w-[1000px] self-center p-4'>
-        { singleStory.map(story => {
-          return <StoryBlock key={story.patient} story={story} />
+        { singleStory.map((story, index) => {
+          return <StoryBlock index={index} setCurrentPlacement={setCurrentPlacement} setBlocksRead={setBlocksRead} singleStory={singleStory} currentPlacement={currentPlacement} blocksRead={blocksRead} key={story.patient} story={story} />
         }) }
         </div>
     </div>
