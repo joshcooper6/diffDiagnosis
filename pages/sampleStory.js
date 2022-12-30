@@ -54,8 +54,20 @@ export default function sampleStory({story}) {
         <Header />
         <div className='w-11/12 max-w-[1000px] self-center p-4'>
         { singleStory.map((story, index) => {
-          return <StoryBlock index={index} setCurrentPlacement={setCurrentPlacement} setBlocksRead={setBlocksRead} singleStory={singleStory} currentPlacement={currentPlacement} blocksRead={blocksRead} key={story.patient} story={story} />
+          return <StoryBlock 
+              index={index} 
+              setCurrentPlacement={setCurrentPlacement} 
+              setBlocksRead={setBlocksRead} 
+              singleStory={singleStory} 
+              currentPlacement={currentPlacement} 
+              blocksRead={blocksRead} 
+              key={story.patient} 
+              story={story} 
+            />
         }) }
+
+        { (blocksRead.length === singleStory.length) ? <h1 className='text-center uppercase font-black text-4xl p-4 text-red-600'>Congrats! You have completed this story.</h1> : <></> }
+
         </div>
     </div>
   )

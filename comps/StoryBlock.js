@@ -7,9 +7,10 @@ export default function StoryBlock(props) {
 
     useEffect(() => {
         console.log('index', index)
-    }, [])
+    }, []);
 
     function increase() {
+        setShowQuestions(true);
         if (currentPlacement <= (singleStory.length - 1)) {
           setCurrentPlacement(prev => {
             if (!blocksRead.includes(prev + 1)) {
@@ -31,13 +32,14 @@ export default function StoryBlock(props) {
             }) }
         </div>
         
-        { (blocksRead[blocksRead.length - 1] === (index)) ? <>
-            <button onClick={increase}>Increase</button>
+        
+        { ((blocksRead[blocksRead.length - 1] === (index)) && (index < (singleStory.length - 1))) ? <>
+            <button onClick={increase} className={'border-[1px] uppercase font-light tracking-widest p-4'} children={'Continue story'} />
         </> : <></> }
 
     </div>
     </>)
 }
 
-// create a question component so that it can set its state as the answer for easy input
-// initial input is text; however, include 'not sure' button that triggers multiple choice
+// figure out scroll effect
+// add question index tracker to be able to move along questions seemlessly

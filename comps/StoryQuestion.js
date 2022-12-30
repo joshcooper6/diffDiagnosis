@@ -6,11 +6,14 @@ export default function StoryQuestion(props) {
 
   // when clicked, question activates for text input
   const [activated, setActivated] = useState(false);
+
   // state variable for text input that will be compared to choices, keywords
   const [input, setInput] = useState('');
+
   // when toggled, multiple choice questions will come up
   const [multipleChoice, setMultipleChoice] = useState(props.multipleChoice || false);
   const correctAnswer = input.toLowerCase() === answer.toLowerCase();
+
   // if question is answered, will lock in state
   const [complete, setComplete] = useState(false);
   const answerIncluded = input.toLowerCase().includes(answer.toLowerCase());
@@ -24,6 +27,7 @@ export default function StoryQuestion(props) {
       activated,
       input,
       correctAnswer,
+      answerIncluded,
       complete
     });
   }
@@ -64,6 +68,7 @@ export default function StoryQuestion(props) {
 
   useEffect(() => {
     console.log(`Current completed status is ${complete} for ${question}`);
+    consoleTest();
   }, [complete]);
 
   function reset() {
@@ -75,12 +80,13 @@ export default function StoryQuestion(props) {
     <div className="flex flex-col">
       <span onClick={handleClick} className="mt-2 mb-2 font-bold" children={question} />
 
-      {complete && activated ? (
+      { complete && activated ? (
         <div className="flex flex-col">
-          <div className="flex gap-1">
-            <span children={answer} />
+          <div className="flex flex-col gap-1">
+            <span><b>Response:</b> {input}</span>
+            <span><b>Answer:</b> {answer}</span>
           </div>
-          <button onClick={reset} className="w-[150px]" children={'Try again for fun?'} />
+          <button onClick={reset} className="p-2 w-[200px] border rounded-md mt-2 bg-red-100" children={'Try again for torture?'} />
         </div>
       ) : (
         <>
@@ -90,12 +96,19 @@ export default function StoryQuestion(props) {
             type={'textarea'}
             className={`${activated && !multipleChoice ? 'w-full border-[1px] p-2 border-red-600 rounded-lg h-[100px]' : 'hidden'}`}
           />
-          <button
-            onClick={() => setMultipleChoice(prev => !prev)}
-            className={`${activated && !multipleChoice ? 'w-[100px]' : 'hidden'}`}
-            children={'Unsure?'}
-          />
-          {multipleChoice && activated ? (
+          <div className="flex gap-2 items-center">
+            <button 
+              className={`${activated && !multipleChoice ? 'p-2 w-[100px] border rounded-md mt-2 bg-green-100' : 'hidden'}`}
+              children={'Submit'}
+              onClick={() => setComplete(true)}
+            />
+            <button
+              onClick={() => setMultipleChoice(prev => !prev)}
+              className={`${(activated && !multipleChoice && (choices.length > 0)) ? 'p-2 w-[100px] border rounded-md mt-2 bg-red-100' : 'hidden'}`}
+              children={'Unsure?'}
+            />
+          </div>
+          { multipleChoice && activated ? (
             <>
               {choices.length > 0 &&
                 choices.map(choice => (
