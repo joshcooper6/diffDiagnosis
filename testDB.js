@@ -55,18 +55,16 @@ const newTest = {
                     id: 1,
                     question: 'Uh-oh, a tick bite. Where could this be going? Write down as many tick-borne infections that you can think of. Then, think about or research the geographical locations these infections are most prevalent. Is Barry in an endemic area? ',
                     keywords: [
-                        'pink',
-                        'blue',
-                        'choiceThree',
-                        'green'
+                        'lyme disease',
+                        'anaplasmosis',
+                        'babesiosis',
+                        'ehrlichiosis',
+                        'Rocky Mountain spotted fever'
                     ],
                     choices: [
-                        'choiceOne',
-                        'choiceTwo',
-                        'choiceThree',
-                        'choiceFour'
+           
                     ],
-                    answer: 'choiceThree'
+                    answer: 'Lyme disease (Borellia burgdorferi): northeastern, mid-Atlantic, and north-central United States, as well as certain parts of Europe and Asia. Anaplasmosis (Anaplasma phagocytophilum): upper Midwest and northeastern United States.  Babesiosis (Babesia spp.): northeastern and upper Midwest United States, as well as parts of Europe and Asia. Ehrlichiosis (Ehrlichia spp.): eastern, south-central United States. Rocky Mountain spotted fever (Rickettsia rickettsii): southeastern, south-central, and mid-Atlantic United States.'
                 }
             ]
         },
@@ -79,14 +77,14 @@ const newTest = {
                 question: 'Fever, loss of appetite, and muscle aches are a sign of?',
                 keywords: [],
                 choices: [],
-                answer: ''
+                answer: 'Infection'
             },
             {
                 id: 2,
                 question: 'Why is Barry’s urine dark?',
-                keywords: [],
+                keywords: ['hemolysis', 'bilirubin', 'urobilinogen'],
                 choices: [],
-                answer: ''
+                answer: 'Hemolysis is increasing the presence of bilirubin breakdown products in the urine, such as urobilinogen.'
             },
             {
                 id: 3,
@@ -105,9 +103,9 @@ const newTest = {
             {
                 id: 5,
                 question: 'What labs would you order to work this up?',
-                keywords: [],
+                keywords: ['complete blood count', 'peripheral blood smear',],
                 choices: [],
-                answer: ''
+                answer: 'Complete blood count, Peripheral blood smear, Comprehensive metabolic panel, Hemolysis labs'
             }
         ]
         },
@@ -117,16 +115,16 @@ const newTest = {
                 {
                     id: 1,
                     question: 'Elevated liver enzymes is an obvious sign of?',                     
-                    keywords: [],
+                    keywords: ['liver damage', 'hepatocyte injury'],
                     choices: [],
-                    answer: 'ketosis'
+                    answer: 'Liver damage / hepatocyte injury'
                 },
                 {
                     id: 2,
                     question: 'Elevated lactase dehydrogenase (LDH), reticulocytosis, and decreased haptoglobin together indicate what pathological process is occurring in Barry’s blood? ',
                     keywords: [],
                     choices: [],
-                    answer: ''
+                    answer: 'Hemolysis. LDH is an enzyme high in many cells, especially RBCs; when LDH is high, it could be an indication that RBCs being destroyed. Reticulocytosis occurs when the bone marrow needs to produce new red blood cells, such as after hemolysis. Haptoglobin decreases in response to the presence of excessive hemoglobin in the blood since haptoglobin binds free hemoglobin for removal. '
                 }
             ]
         },

@@ -1,4 +1,10 @@
 import { useEffect, useState } from "react";
+import { getQuestions } from "../funcs/getQuestions";
+import { hasKeyword } from "../funcs/hasKeyword";
+import { splitIntoWords } from "../funcs/splitIntoWords";
+import { removePunctuation } from "../funcs/removeCommas";
+import { removeSentenceStructureWords } from "../funcs/removeStructure";
+import { processString } from "../funcs/processString";
 
 export default function StoryQuestion(props) {
   const { questionObject } = props;
@@ -26,8 +32,11 @@ export default function StoryQuestion(props) {
       keywords,
       activated,
       input,
-      correctAnswer,
-      answerIncluded,
+      newKeywords: processString(answer),
+      newInput: removePunctuation(input),
+      containsKeywords: hasKeyword(splitIntoWords(answer.toLowerCase()), removePunctuation(input), answer),
+      // correctAnswer,
+      // answerIncluded,
       complete
     });
   }

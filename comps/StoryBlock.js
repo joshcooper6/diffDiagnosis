@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import { getQuestions } from "../funcs/getQuestions";
 import StoryQuestion from "./StoryQuestion";
 
 export default function StoryBlock(props) {
     const { story, blocksRead, singleStory, setBlocksRead, setCurrentPlacement, currentPlacement, index } = props;
     const [showQuestions, setShowQuestions] = useState(false);
+    const allStoryQuestions = getQuestions(singleStory);
 
     useEffect(() => {
-        console.log('index', index)
+        console.log('Total Questions', getQuestions(singleStory))
     }, []);
 
     function increase() {
