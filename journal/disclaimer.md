@@ -1,0 +1,1 @@
+<i> Disclaimer: This journal was not started at the exact start of the project. Started this idea today to accurately track my progress.</i>
