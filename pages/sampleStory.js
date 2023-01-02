@@ -1,39 +1,40 @@
 import { useEffect, useState } from 'react';
 import { test, newTest } from '../testDB';
 import Header from '../comps/Header';
-import { getSentencesWithType } from '../funcs/getSentences';
-import { formatStory } from '../funcs/formatStory';
+// import { getSentencesWithType } from '../funcs/getSentences';
+// import { formatStory } from '../funcs/formatStory';
 import StoryBlock from '../comps/StoryBlock';
+import { getQuestions } from '../funcs/getQuestions';
 
 export default function sampleStory({story}) {
 
-    const [question, setQuestion] = useState({
-        question: '',
-        choices: [],
-        answer: ''
-    });
+    // const [question, setQuestion] = useState({
+    //     question: '',
+    //     choices: [],
+    //     answer: ''
+    // });
 
-    function renderChoices(sentence) {
-        // take sentence from rendered story and filter it through database questions
-        let questionInStory = test.questions.filter(q => q.string.includes(sentence))[0];
-        // set choices and answers to the ones for the specific question in the database
-        let choices = questionInStory.choices;
-        let answer = questionInStory.answer;
+    // function renderChoices(sentence) {
+    //     // take sentence from rendered story and filter it through database questions
+    //     let questionInStory = test.questions.filter(q => q.string.includes(sentence))[0];
+    //     // set choices and answers to the ones for the specific question in the database
+    //     let choices = questionInStory.choices;
+    //     let answer = questionInStory.answer;
 
-        return { choices, answer };
-    }
+    //     return { choices, answer };
+    // }
 
-    function handleChange(string) {
-        setQuestion({
-            question: string,
-            choices: renderChoices(string).choices,
-            answer: renderChoices(string).answer
-        })
-    }
+    // function handleChange(string) {
+    //     setQuestion({
+    //         question: string,
+    //         choices: renderChoices(string).choices,
+    //         answer: renderChoices(string).answer
+    //     })
+    // }
 
-    const filteredSentences = getSentencesWithType(story);
+    // const filteredSentences = getSentencesWithType(story);
 
-    useEffect(() => {console.log(question)}, [question]);
+    // useEffect(() => {console.log(question)}, [question]);
 
   const singleStory = newTest.elements;
   const [blocksRead, setBlocksRead] = useState([0]);
@@ -47,7 +48,18 @@ export default function sampleStory({story}) {
     console.log('current blocks read', blocksRead)
   }, [blocksRead])
 
-  const [showQuestions, setShowQuestions] = useState(false);
+  // const [showQuestions, setShowQuestions] = useState(false);
+  const allQuestions = getQuestions(singleStory).length;
+  const [currentScore, setCurrentScore] = useState(0);
+  const scorePercent = `${Math.ceil((currentScore / allQuestions) * 100)}%`
+  useEffect(() => {
+    const data = {
+      allQuestions,
+      currentScore,
+      scorePercent
+    }
+    console.log(data);
+  }, [currentScore]);
 
   return (
     <div className='flex flex-col justify-center items-center'>
@@ -63,6 +75,8 @@ export default function sampleStory({story}) {
               blocksRead={blocksRead} 
               key={story.patient} 
               story={story} 
+              currentScore={currentScore}
+              setCurrentScore={setCurrentScore}
             />
         }) }
 

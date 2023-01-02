@@ -10,7 +10,7 @@ function processString(str) {
   
     // remove sentence structure words from array
     const ignore = ['the', 'such', 'as', 'a', 'are', 'in', 'of', 'who', 'what', 'where', 'when', 'why', 'how'];
-    const ignore2 = ["as", "and", 'is', "the", "of", "a", "an", "in", "at"];
+    const ignore2 = ["as", "and", 'well', 'is', "the", "of", "a", "an", "in", "at"];
     const sentenceStructureWords = ignore.concat(ignore2);
     words = words.filter(word => !sentenceStructureWords.includes(word));
   

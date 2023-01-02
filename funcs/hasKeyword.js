@@ -1,4 +1,11 @@
-function hasKeyword(keywords, input, answer) {
+import { stringToArray } from "./stringToArray";
+import { removePunctuation } from "./removeCommas";
+import { processString } from "./processString";
+
+function hasKeyword(userInput, answer) {
+    const keywords = processString(answer.toLowerCase());
+    const input = removePunctuation(userInput.toLowerCase());
+
     // Check if the input and the answer match, ignoring case.
     const correctAnswer = input.toLowerCase() === answer.toLowerCase();
     // Check if there are any keywords to compare.
@@ -21,7 +28,7 @@ function hasKeyword(keywords, input, answer) {
       }
     }
     
-    return keywordCount >= 3;
+    return keywordCount >= 1;
   }
   
   module.exports = { hasKeyword };
