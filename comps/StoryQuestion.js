@@ -41,55 +41,27 @@ export default function StoryQuestion(props) {
 
   function handleClick() {
     setActivated(prev => !prev);
-    // if (activated && complete && containsKeywords) { setCurrentScore(prev => prev + 1) };
-
-    // setMultipleChoice(false);
-    // consoleTest();
   }
 
-  // function handleChoice(choice) {
-  //   setInput(choice);
-  //   if (correctAnswer && activated) {
-  //     setComplete(true);
-  //   }
-  // }
-
-  // function checkForCompletion() {
-  //   if (correctAnswer || answerIncluded) {
-  //     return setComplete(true);
-  //   }
-  // }
-
-  // function checkForMatch(string, stringsToMatch) {
-  //   for (const s of stringsToMatch) {
-  //     if (string.includes(s)) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
-
   useEffect(() => {
-    // checkForCompletion();
-    // console.log('checking keywords', checkForMatch(input, keywords));
-    console.log('Activated', activated);
     consoleTest();
   }, [activated]);
 
   useEffect(() => {
-    // console.log(`Current completed status is ${complete} for ${question}`);
     consoleTest();
 
     if ((complete) && (containsKeywords)) {
       setCurrentScore(prev => ++prev)
-    }
-
-    // increase the current score if question is completed and correct
+    };
   }, [complete]);
 
   function reset() {
     setComplete(false);
-    if (containsKeywords) { setCurrentScore(prev => prev - 1) };
+    /* if the answer was correct after completing, 
+    we have to take away from score since it's changing */
+    if (containsKeywords) { 
+      setCurrentScore(prev => prev - 1) 
+    };
   }
 
   function clearInput() {

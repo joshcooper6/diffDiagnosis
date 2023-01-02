@@ -7,7 +7,7 @@ function hasKeyword(userInput, answer) {
     const input = removePunctuation(userInput.toLowerCase());
 
     // Check if the input and the answer match, ignoring case.
-    const correctAnswer = input.toLowerCase() === answer.toLowerCase();
+    // const correctAnswer = input.toLowerCase() === answer.toLowerCase();
     // Check if there are any keywords to compare.
     const hasKeywords = keywords.length > 0;
   
@@ -15,10 +15,10 @@ function hasKeyword(userInput, answer) {
       // If there are no keywords and no input, assume there's no correct answer.
       return true;
     }
-    if (correctAnswer) {
-      // If the input and the answer match, return true.
-      return true;
-    }
+    // if (correctAnswer) {
+    //   // If the input and the answer match, return true.
+    //   return true;
+    // }
   
     // Count the number of keywords that appear in the input.
     let keywordCount = 0;

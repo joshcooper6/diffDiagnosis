@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { getQuestions } from "../funcs/getQuestions";
+import { useEffect, useState, useRef } from "react";
 import StoryQuestion from "./StoryQuestion";
 
 export default function StoryBlock(props) {
     const { story, blocksRead, singleStory, setBlocksRead, currentScore, setCurrentScore, setCurrentPlacement, currentPlacement, index } = props;
     const [showQuestions, setShowQuestions] = useState(false);
-    const allStoryQuestions = getQuestions(singleStory);
+    const buttonRef = useRef(null);
 
     function increase() {
         setShowQuestions(true);
+        buttonRef.current.scrollIntoView({ behavior: 'smooth' });
         if (currentPlacement <= (singleStory.length - 1)) {
           setCurrentPlacement(prev => {
             if (!blocksRead.includes(prev + 1)) {
@@ -30,10 +30,11 @@ export default function StoryBlock(props) {
             }) }
         </div>
         
-        
-        { ((blocksRead[blocksRead.length - 1] === (index)) && (index < (singleStory.length - 1))) ? <>
-            <button onClick={increase} className={'border-[1px] uppercase font-light tracking-widest p-4'} children={'Continue story'} />
-        </> : <></> }
+        <div ref={buttonRef} className="w-full min-h-[10px]">
+            { ((blocksRead[blocksRead.length - 1] === (index)) && (index < (singleStory.length - 1))) ? <>
+                <button onClick={increase} className={'border-[1px] uppercase font-light tracking-widest p-4 w-full'} children={'Continue story'} />
+            </> : <></> }
+        </div>
 
     </div>
     </>)
