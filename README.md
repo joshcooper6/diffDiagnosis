@@ -21,3 +21,7 @@ As an administrator, I want to be able to...
 - Add, edit, and delete questions from each story from the dashboard.
 - Connect and collect payment authorization using a third-party provider, such as Striped.js.
 - Integrate user authorization and manage user database efficiently.
+
+## Current Preview
+
+<img src="./assets/gifs/ddXCasebookHD.gif" />
